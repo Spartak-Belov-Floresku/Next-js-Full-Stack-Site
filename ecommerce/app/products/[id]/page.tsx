@@ -1,7 +1,9 @@
 import { products } from "@/app/product-data";
 import NotFoundPage from "@/app/not-found";
 
-const ProductDetailPage = ({ params }:{ params: { id: string } }) => {
+type Params = {id: string}
+
+const ProductDetailPage = ({ params }:{ params: Params }) => {
 
     const product = products.find(p=> p.id === params.id);
 
