@@ -20,13 +20,6 @@ const connectToDb = async () => {
     }
     });
 
-    // try {
-    //     // Connect the client to the server	(optional starting in v4.7)
-    //     await client.connect();
-    //     console.log("DB connected!")
-    // } catch(err){
-    //     console.log(JSON.stringify(err))
-    // }
     try{
         await client.connect();
 
