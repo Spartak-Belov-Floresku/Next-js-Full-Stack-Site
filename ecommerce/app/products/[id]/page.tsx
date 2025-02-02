@@ -1,11 +1,11 @@
-import { products } from "@/app/product-data";
 import NotFoundPage from "@/app/not-found";
 
 type Params = {id: string}
 
-const ProductDetailPage = ({ params }:{ params: Params }) => {
+const ProductDetailPage = async ({ params }:{ params: Params }) => {
 
-    const product = products.find(p=> p.id === params.id);
+    const response = await fetch(`http://localhost:3000/api/products/${params.id}`);
+    const product = await response.json();
 
     return (
         !product
