@@ -8,7 +8,7 @@ const ProductDetailPage = async ({ params }:{ params: Params }) => {
     const product = await response.json();
 
     return (
-        !product
+        product.message
         ?   <NotFoundPage />
         :   <div className="container mx-auto p-8 flex flex-col md:flex-row">
                 <div className="md:w-1/2 md-4 md:mb-0 md:mr-8">

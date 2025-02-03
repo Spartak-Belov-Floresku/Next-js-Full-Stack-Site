@@ -9,7 +9,7 @@ export async function GET(request: NextRequest,  { params }:{ params: Params }){
     const product = await db.collection('products').findOne({id: prodId});
 
     return !product
-        ? new Response('Product not found!', {
+        ? new Response(JSON.stringify({'message': 'Product not found!'}), {
             status: 404,
         })
         : new Response(JSON.stringify(product), {
